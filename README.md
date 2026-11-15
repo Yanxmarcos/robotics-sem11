@@ -9,12 +9,6 @@ Simulación para el laboratorio de Robótica de la semana 11 de la Universidad N
 3. Cambia a **Plano** para ver el camino inicial, el desvío por el paso norte y el recorrido real. Repite con **Recorrido base** y **Destino inaccesible**.
 4. Al terminar, usa **Descargar registro CSV** para guardar los eventos y los indicadores de la misión. **Evidencias** contiene las cinco capturas y los registros de las tres ejecuciones verificadas.
 
-## Publicar en Vercel
-
-Sube el contenido de **Simulacion_Vercel** a la raíz de un repositorio de GitHub e impórtalo en Vercel como un proyecto nuevo. Si subes el repositorio completo, elige **Simulacion_Vercel** como **Root Directory**.
-
-`vercel.json` selecciona **Other**, sirve la carpeta `public` y deja vacíos los comandos de instalación y compilación. La simulación ejecuta sus cálculos y gráficos en el navegador.
-
 ## Código fuente
 
 El motor está en `sim/motor.js`. Calcula rutas con A* sobre una cuadrícula de cuatro vecinos, ejecuta el movimiento a un paso fijo de 1/60 s y simula un sensor frontal de tres rayos. La escena y el plano usan el mismo estado del motor.
