@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f2ed">
+  <title>Navegación autónoma | Robótica UNT</title>
+  <link rel="stylesheet" href="./sim/estilos.css">
+  <script type="importmap">{"imports":{"three":"./sim/vendor/three.module.js"}}</script>
+</head>
+<body>
+  <header class="top">
+    <div class="shell masthead">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Robótica <small>UNT</small></span></div>
+      <span class="lab">Laboratorio <b>11</b></span>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="intro" aria-labelledby="page-title">
+      <h1 id="page-title">Navegación autónoma</h1>
+      <p>Guía un robot móvil por un almacén y observa cómo reacciona cuando se bloquea su camino.</p>
+    </section>
+    <div class="workspace">
+      <section class="viewer" aria-labelledby="viewer-title">
+        <div class="viewer-head">
+          <h2 id="viewer-title">Almacén de despacho</h2>
+          <div class="view-switch" role="group" aria-label="Vista del almacén">
+            <button type="button" data-view="3d" aria-pressed="true">Vista 3D</button>
+            <button type="button" data-view="map" aria-pressed="false">Plano</button>
+          </div>
+        </div>
+        <div id="viewport" class="viewport">
+          <div id="scene" class="scene" aria-label="Vista tridimensional del robot y del almacén"></div>
+          <canvas id="map" class="map" role="img" aria-label="Plano del almacén, robot y rutas de navegación" hidden></canvas>
+          <span id="view-hint" class="view-hint">Arrastra para girar · Desplaza para acercar</span>
+        </div>
+        <div class="legend" aria-label="Leyenda de rutas">
+          <span><i class="swatch planned"></i>Ruta inicial</span>
+          <span><i class="swatch rerouted"></i>Desvío</span>
+          <span><i class="swatch actual"></i>Recorrido real</span>
+          <span><i class="swatch sensor"></i>Sensor frontal</span>
+        </div>
+      </section>
+      <aside class="control" aria-labelledby="control-title">
+        <h2 id="control-title">Control de la misión</h2>
+        <label for="scenario">Escenario</label>
+        <select id="scenario">
+          <option value="base">Recorrido base</option>
+          <option value="desvio" selected>Obstáculo inesperado</option>
+          <option value="bloqueo">Destino inaccesible</option>
+        </select>
+        <p id="scenario-description" class="scenario-description"></p>
+        <div class="status" role="status"><span class="status-dot" aria-hidden="true"></span><strong id="status">Listo</strong></div>
+        <div class="actions">
+          <button class="primary" id="start" type="button">Iniciar</button>
+          <button id="reset" type="button">Reiniciar</button>
+        </div>
+        <div class="playback">
+          <button id="step" type="button" title="Avanzar 0,25 s de simulación">Avanzar 0,25 s</button>
+          <label for="rate">Reproducción</label>
+          <select id="rate">
+            <option value="0.5">0,5×</option>
+            <option value="1" selected>1×</option>
+            <option value="2">2×</option>
+          </select>
+        </div>
+        <div class="events">
+          <h3>Registro de eventos</h3>
+          <p id="events-empty">Los eventos aparecerán al iniciar la misión.</p>
+          <ol id="events" aria-label="Eventos de la misión"></ol>
+        </div>
+      </aside>
+    </div>
+    <section class="results" aria-labelledby="results-title">
+      <div class="result-heading">
+        <h2 id="results-title">Mediciones de la misión</h2>
+        <button id="download" type="button" disabled>Descargar registro CSV</button>
+      </div>
+      <dl class="metrics">
+        <div><dt>Tiempo simulado</dt><dd id="time">0,00 <span>s</span></dd></div>
+        <div><dt>Distancia recorrida</dt><dd id="distance">0,00 <span>m</span></dd></div>
+        <div><dt>Recálculos</dt><dd id="replans">0</dd></div>
+        <div><dt>Contactos</dt><dd id="contacts">0</dd></div>
+        <div><dt>Velocidad actual</dt><dd id="speed">0,00 <span>m/s</span></dd></div>
+      </dl>
+    </section>
+    <footer>Universidad Nacional de Trujillo <span>·</span> Ingeniería Informática</footer>
+  </main>
+  <noscript>Activa JavaScript para ejecutar la simulación.</noscript>
+  <script type="module" src="./sim/app.js"></script>
+</body>
+</html>

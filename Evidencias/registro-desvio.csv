@@ -1,0 +1,6 @@
+﻿"Escenario";"Estado actual";"Tiempo de ejecución (s)";"Distancia (m)";"Recálculos";"Contactos";"Tiempo del evento (s)";"Evento"
+"Obstáculo inesperado";"Meta alcanzada";"17.83";"21.00";"1";"0";"0.00";"Ruta inicial calculada"
+"Obstáculo inesperado";"Meta alcanzada";"17.83";"21.00";"1";"0";"1.80";"Caja en el pasillo principal"
+"Obstáculo inesperado";"Meta alcanzada";"17.83";"21.00";"1";"0";"2.08";"El sensor detectó la caja. Robot detenido"
+"Obstáculo inesperado";"Meta alcanzada";"17.83";"21.00";"1";"0";"3.05";"Desvío calculado por el paso norte"
+"Obstáculo inesperado";"Meta alcanzada";"17.83";"21.00";"1";"0";"17.83";"Robot en la estación de despacho"

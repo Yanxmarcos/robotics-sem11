@@ -1,0 +1,10 @@
+{
+  "name": "navegacion-robotica-semana-11",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node empaquetar.mjs",
+    "start": "node servir.mjs",
+    "test": "node --test pruebas/*.test.mjs"
+  }
+}
